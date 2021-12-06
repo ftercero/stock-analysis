@@ -1,6 +1,6 @@
 # stock-analysis
 
-##*Overview of Project*
+*##Overview of Project*
 The purpose of this analysis is to find the total daily volume for 12 different stocks (Tickers) as a measurement of trade activity and the yearly return to find the most successful ticker.
 
 ##*Results*

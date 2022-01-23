@@ -14,16 +14,38 @@ The most successful ticker was DQ and RUN in 2017 and 2018, respectively. Howeve
 
 ### Code differences
 There were two codes used to obtain the same results. The refactor code used "tickerIndex" consistently to as opposed to calling out the cells in the excel sheet. the refactored code used a tickerIndex to access the stock ticker index for tickers, ticker volumes, starting and ending prices. In the refactored code, the two lines of script below;
-"If Cells(j, 1).Value = ticker Then
-   totalVolume = totalVolume + Cells(j, 8).Value"
-was "simplified" to one line, "tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value". In the script mentioned, the used of tickerIndex is clearly visible.
 
-Additionally, the refactored code below does not use nested loops, 
+```
+
+If Cells(j, 1).Value = ticker Then
+  totalVolume = totalVolume + Cells(j, 8).Value
+
+```
+
+was "simplified" to one line,
+
+```
+
+tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value
+
+```
+
+In the script mentioned, the used of tickerIndex is clearly visible.
+
+Additionally, the refactored code below does not use nested loops,
+
+```
     For i = 0 To 11
         tickerVolumes(i) = 0  
     Next i
     For i = 2 To RowCount
+
+```
+
 whereas the original code does.
+
+```
+
  For i = 0 To 11
     ticker = tickers(i)
     totalVolume = 0
@@ -31,17 +53,19 @@ whereas the original code does.
     Worksheets(yearValue).Activate
         For j = 2 To RowCount
 
+```
+
 ### Output time
 The refracted code was created to find a more efficient code to run stock analysis. As a result the refracted code was about 0.2 seconds faster than the initial code. If data increased 5 fold, the refracted code would be 1 second faster. To save 1 minute, data would need to be 30 times the size of the current data.
 
-![Alt text](https://github.com/ftercero/stock-analysis/blob/main/2017_Original..png?raw=true "2017 Original Execution Time")
+![2017 Original Execution Time](https://github.com/ftercero/stock-analysis/blob/main/2017_Original..png)
 
-![Alt text](https://github.com/ftercero/stock-analysis/blob/main/2017_Refactored..png?raw=true "2017 Refactored Execution Time")
+![2017 Refactored Execution Time](https://github.com/ftercero/stock-analysis/blob/main/2017_Refactored..png)
 
 
-![Alt text](https://github.com/ftercero/stock-analysis/blob/main/2018_Original..png?raw=true "2018 Original Execution Time")
+![2018 Original Execution Time](https://github.com/ftercero/stock-analysis/blob/main/2018_Original..png)
 
-![Alt text](https://github.com/ftercero/stock-analysis/blob/main/2018_Refactored..png?raw=true "2018 Refactored Execution Time")
+![2018 Refactored Execution Time](https://github.com/ftercero/stock-analysis/blob/main/2018_Refactored..png)
 
 
 ## Summary

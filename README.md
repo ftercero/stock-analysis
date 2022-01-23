@@ -8,7 +8,7 @@ The purpose of this analysis is to find the total daily volume for 12 different 
 ### Best Investment
 The most successful ticker was DQ and RUN in 2017 and 2018, respectively. However, DQ suffered a loss of 62.6% the following year whereas RUN had seen a small profit of 5.5% the previous year. Although RUN experienced the most success in the latter year, DQ's high return in 2017 is still a better return despite the 62.6% decrease. For example, if $100 were invested at the beginning of 2017, by then end of 2018 DQ would have a surplus of $136.80 whereas RUN would have a surplus of about $94.12.
 
-![Alt text](https://github.com/ftercero/stock-analysis/blob/main/VBA_Challenge_2017.png?raw=true "Title")
+
 
 ### Code differences
 There were two codes used to obtain the same results. The refactor code combined the "insert code here" to "insert code here". The difference between the two is in the "For loops" and how the refactored code used a tickerIndex to access the stock ticker index for tickers, ticker volumes, starting and ending prices.
